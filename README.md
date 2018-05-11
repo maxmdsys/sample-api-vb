@@ -2,14 +2,14 @@
 <h3>API V3: https://directapi.max.md:8445/message/</h3>
 <h3>Production Endpoint URL: https://api.directmdemail.com/message/services/DirectMessageService?wsdl</h3>
 <h3>Evaluation Endpoint URL: https://evalapi.max.md:8445/message/services/DirectMessageService?wsdl</h3>
-<strong>To run the sample project, you need to uncomment functions you want to use on [Main.vb](./tree/master/VBSampleCode/VBSampleCode/Main.vb) and [SendDirectMessagesSample.vb](./tree/master/VBSampleCode/VBSampleCode/SendDirectMessagesSample.vb) and set correct username and password.</strong>
+<strong>To run the sample project, you need to uncomment functions you want to use on [Main.vb](https://github.com/maxmdsys/sample-api-vb//tree/master/VBSampleCode/VBSampleCode/Main.vb) and [SendDirectMessagesSample.vb](https://github.com/maxmdsys/sample-api-vb/tree/master/VBSampleCode/VBSampleCode/SendDirectMessagesSample.vb) and set correct username and password.</strong>
 <br/>
 <h4>To Create a new project:</h4>
 1.	Create a new .NET Framework project<br/>
-![p-1](./blob/master/p-1.png)
+![p-1](./sample-api-vb/p-1.png)
 2.	Add our service reference in your project<br/>
-![p-2](./blob/master/p-2.png)<br/>
-![p-3](./blob/master/p-3.png)
-3.	Copy [RetrieveDirectMessagesSample.vb](./tree/master/VBSampleCode/VBSampleCode/RetrieveDirectMessagesSample.vb) and [SendDirectMessagesSample.vb](./tree/master/VBSampleCode/VBSampleCode/SendDirectMessagesSample.vb) to your project<br/>
-![p-4](./blob/master/p-4.png)<br/>
-See [Main.vb](./tree/master/VBSampleCode/VBSampleCode/Main.vb) how to use these two classes, and that’s it!<br/>
+![p-2](./sample-api-vb/p-2.png)<br/>
+![p-3](./sample-api-vb/p-3.png)
+3.	Copy [RetrieveDirectMessagesSample.vb](https://github.com/maxmdsys/sample-api-vb/tree/master/VBSampleCode/VBSampleCode/RetrieveDirectMessagesSample.vb) and [SendDirectMessagesSample.vb](https://github.com/maxmdsys/sample-api-vb/tree/master/VBSampleCode/VBSampleCode/SendDirectMessagesSample.vb) to your project<br/>
+![p-4](./sample-api-vb/p-4.png)<br/>
+See [Main.vb](https://github.com/maxmdsys/sample-api-vb/tree/master/VBSampleCode/VBSampleCode/Main.vb) how to use these two classes, and that’s it!<br/>

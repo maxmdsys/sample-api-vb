@@ -13,10 +13,10 @@
 
 #### To Create a new project:
 1.	Create a new .NET Framework project<br/>
-![p-1](./sample-api-vb/p-1.png)
+![p-1](./p-1.png)
 1.	Add our service reference in your project<br/>
-![p-2](./sample-api-vb/p-2.png)<br/>
-![p-3](./sample-api-vb/p-3.png)
+![p-2](./p-2.png)<br/>
+![p-3](./p-3.png)
 1.	Copy [RetrieveDirectMessagesSample.vb](https://github.com/maxmdsys/sample-api-vb/tree/master/VBSampleCode/VBSampleCode/RetrieveDirectMessagesSample.vb) and [SendDirectMessagesSample.vb](https://github.com/maxmdsys/sample-api-vb/tree/master/VBSampleCode/VBSampleCode/SendDirectMessagesSample.vb) to your project<br/>
-![p-4](./sample-api-vb/p-4.png)<br/>
+![p-4](./p-4.png)<br/>
 See [Main.vb](https://github.com/maxmdsys/sample-api-vb/tree/master/VBSampleCode/VBSampleCode/Main.vb) how to use these two classes, and that’s it!<br/>

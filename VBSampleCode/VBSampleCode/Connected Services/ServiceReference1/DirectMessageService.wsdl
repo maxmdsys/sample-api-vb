@@ -1,0 +1,1448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:tns="org:maxmd:direct:message:v3:2015" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="DirectMessageService" targetNamespace="org:maxmd:direct:message:v3:2015" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="org:maxmd:direct:message:v3:2015" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="CopyMessagesByUID" type="tns:CopyMessagesByUID" />
+      <xs:element name="CopyMessagesByUIDResponse" type="tns:CopyMessagesByUIDResponse" />
+      <xs:element name="CreateFolder" type="tns:CreateFolder" />
+      <xs:element name="CreateFolderResponse" type="tns:CreateFolderResponse" />
+      <xs:element name="DeleteFolder" type="tns:DeleteFolder" />
+      <xs:element name="DeleteFolderResponse" type="tns:DeleteFolderResponse" />
+      <xs:element name="DeleteMessagesByUID" type="tns:DeleteMessagesByUID" />
+      <xs:element name="DeleteMessagesByUIDResponse" type="tns:DeleteMessagesByUIDResponse" />
+      <xs:element name="Echo" type="tns:Echo" />
+      <xs:element name="EchoResponse" type="tns:EchoResponse" />
+      <xs:element name="ForwardMessagesByUID" type="tns:ForwardMessagesByUID" />
+      <xs:element name="ForwardMessagesByUIDResponse" type="tns:ForwardMessagesByUIDResponse" />
+      <xs:element name="GetDeletedMessageCount" type="tns:GetDeletedMessageCount" />
+      <xs:element name="GetDeletedMessageCountResponse" type="tns:GetDeletedMessageCountResponse" />
+      <xs:element name="GetFolders" type="tns:GetFolders" />
+      <xs:element name="GetFoldersResponse" type="tns:GetFoldersResponse" />
+      <xs:element name="GetMessageByIndex" type="tns:GetMessageByIndex" />
+      <xs:element name="GetMessageByIndexResponse" type="tns:GetMessageByIndexResponse" />
+      <xs:element name="GetMessageCount" type="tns:GetMessageCount" />
+      <xs:element name="GetMessageCountResponse" type="tns:GetMessageCountResponse" />
+      <xs:element name="GetMessageMetadata" type="tns:GetMessageMetadata" />
+      <xs:element name="GetMessageMetadataResponse" type="tns:GetMessageMetadataResponse" />
+      <xs:element name="GetMessageStatus" type="tns:GetMessageStatus" />
+      <xs:element name="GetMessageStatusResponse" type="tns:GetMessageStatusResponse" />
+      <xs:element name="GetMessages" type="tns:GetMessages" />
+      <xs:element name="GetMessagesByIndexes" type="tns:GetMessagesByIndexes" />
+      <xs:element name="GetMessagesByIndexesResponse" type="tns:GetMessagesByIndexesResponse" />
+      <xs:element name="GetMessagesByReceivedDate" type="tns:GetMessagesByReceivedDate" />
+      <xs:element name="GetMessagesByReceivedDateResponse" type="tns:GetMessagesByReceivedDateResponse" />
+      <xs:element name="GetMessagesByReceivedDateUTC" type="tns:GetMessagesByReceivedDateUTC" />
+      <xs:element name="GetMessagesByReceivedDateUTCResponse" type="tns:GetMessagesByReceivedDateUTCResponse" />
+      <xs:element name="GetMessagesBySender" type="tns:GetMessagesBySender" />
+      <xs:element name="GetMessagesBySenderResponse" type="tns:GetMessagesBySenderResponse" />
+      <xs:element name="GetMessagesBySubject" type="tns:GetMessagesBySubject" />
+      <xs:element name="GetMessagesBySubjectResponse" type="tns:GetMessagesBySubjectResponse" />
+      <xs:element name="GetMessagesByUID" type="tns:GetMessagesByUID" />
+      <xs:element name="GetMessagesByUIDResponse" type="tns:GetMessagesByUIDResponse" />
+      <xs:element name="GetMessagesResponse" type="tns:GetMessagesResponse" />
+      <xs:element name="GetMessagesStatusBySmtpIds" type="tns:GetMessagesStatusBySmtpIds" />
+      <xs:element name="GetMessagesStatusBySmtpIdsResponse" type="tns:GetMessagesStatusBySmtpIdsResponse" />
+      <xs:element name="GetRawMessagesByUID" type="tns:GetRawMessagesByUID" />
+      <xs:element name="GetRawMessagesByUIDResponse" type="tns:GetRawMessagesByUIDResponse" />
+      <xs:element name="GetUIDs" type="tns:GetUIDs" />
+      <xs:element name="GetUIDsResponse" type="tns:GetUIDsResponse" />
+      <xs:element name="GetUnreadMessageCount" type="tns:GetUnreadMessageCount" />
+      <xs:element name="GetUnreadMessageCountResponse" type="tns:GetUnreadMessageCountResponse" />
+      <xs:element name="GetUnreadMessages" type="tns:GetUnreadMessages" />
+      <xs:element name="GetUnreadMessagesResponse" type="tns:GetUnreadMessagesResponse" />
+      <xs:element name="MarkMessagesAsReadByUID" type="tns:MarkMessagesAsReadByUID" />
+      <xs:element name="MarkMessagesAsReadByUIDResponse" type="tns:MarkMessagesAsReadByUIDResponse" />
+      <xs:element name="MarkMessagesAsUnReadByUID" type="tns:MarkMessagesAsUnReadByUID" />
+      <xs:element name="MarkMessagesAsUnReadByUIDResponse" type="tns:MarkMessagesAsUnReadByUIDResponse" />
+      <xs:element name="MoveFolder" type="tns:MoveFolder" />
+      <xs:element name="MoveFolderResponse" type="tns:MoveFolderResponse" />
+      <xs:element name="MoveMessagesByUID" type="tns:MoveMessagesByUID" />
+      <xs:element name="MoveMessagesByUIDResponse" type="tns:MoveMessagesByUIDResponse" />
+      <xs:element name="PatientFHIRQuery" type="tns:PatientFHIRQuery" />
+      <xs:element name="PatientFHIRQueryResponse" type="tns:PatientFHIRQueryResponse" />
+      <xs:element name="SaveRawMessages" type="tns:SaveRawMessages" />
+      <xs:element name="SaveRawMessagesResponse" type="tns:SaveRawMessagesResponse" />
+      <xs:element name="SearchMessagesMetadataByReceivedDate" type="tns:SearchMessagesMetadataByReceivedDate" />
+      <xs:element name="SearchMessagesMetadataByReceivedDateResponse" type="tns:SearchMessagesMetadataByReceivedDateResponse" />
+      <xs:element name="SearchMessagesMetadataByReceivedDateUTC" type="tns:SearchMessagesMetadataByReceivedDateUTC" />
+      <xs:element name="SearchMessagesMetadataByReceivedDateUTCResponse" type="tns:SearchMessagesMetadataByReceivedDateUTCResponse" />
+      <xs:element name="Send" type="tns:Send" />
+      <xs:element name="SendResponse" type="tns:SendResponse" />
+      <xs:element name="SendWithHeader" type="tns:SendWithHeader" />
+      <xs:element name="SendWithHeaderResponse" type="tns:SendWithHeaderResponse" />
+      <xs:element name="SetFolderSubscribed" type="tns:SetFolderSubscribed" />
+      <xs:element name="SetFolderSubscribedResponse" type="tns:SetFolderSubscribedResponse" />
+      <xs:complexType name="SearchMessagesMetadataByReceivedDate">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element name="beginTime" type="xs:long" />
+          <xs:element name="endTime" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="authentication">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="username" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchMessagesMetadataByReceivedDateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getMessageResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getMessageResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:apiResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="messages" nillable="true" type="tns:messageDetail" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="apiResponse">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="messageDetail">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:message">
+            <xs:sequence>
+              <xs:element name="expunged" type="xs:boolean" />
+              <xs:element minOccurs="0" name="folder" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="headers" nillable="true" type="tns:messageHeader" />
+              <xs:element name="modified" type="xs:boolean" />
+              <xs:element minOccurs="0" name="msgID" type="xs:string" />
+              <xs:element name="msgnum" type="xs:int" />
+              <xs:element minOccurs="0" name="receivedDate" type="xs:dateTime" />
+              <xs:element name="saved" type="xs:boolean" />
+              <xs:element minOccurs="0" name="sentDate" type="xs:dateTime" />
+              <xs:element name="size" type="xs:int" />
+              <xs:element name="strict" type="xs:boolean" />
+              <xs:element name="uid" type="xs:long" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="message">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="attachmentList" nillable="true" type="tns:attachment" />
+          <xs:element minOccurs="0" name="body" type="xs:string" />
+          <xs:element name="htmlBody" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="recipients" nillable="true" type="tns:recipient" />
+          <xs:element minOccurs="0" name="replyTo" type="xs:string" />
+          <xs:element minOccurs="0" name="sender" type="xs:string" />
+          <xs:element minOccurs="0" name="subject" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="messageHeader">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="attachment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="content" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="contentType" type="xs:string" />
+          <xs:element minOccurs="0" name="filename" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="recipient">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="email" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="tns:recipientType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="messageDetailCollection">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:arrayList">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="arrayList">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractList">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="abstractList" abstract="true">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractCollection">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="abstractCollection" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="Echo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="str" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EchoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesByIndexes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="indexes" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesByIndexesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getMessageResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteMessagesByUID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="uids" type="xs:long" />
+          <xs:element name="deleteForever" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteMessagesByUIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:apiResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesBySender">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" name="sender" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesBySenderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getMessageResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MarkMessagesAsUnReadByUID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="uids" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MarkMessagesAsUnReadByUIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:apiResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SaveRawMessages">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="messages" type="tns:rawMessage" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="rawMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="folder" type="xs:string" />
+          <xs:element minOccurs="0" name="msgID" type="xs:string" />
+          <xs:element name="uid" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="rawMessageCollection">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:arrayList">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="SaveRawMessagesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:apiResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateFolder">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateFolderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:apiResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessageMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessageMetadataResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getMessageResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetRawMessagesByUID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="uids" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetRawMessagesByUIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getRawMessageResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getRawMessageResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:apiResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="messages" nillable="true" type="tns:rawMessage" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ForwardMessagesByUID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="uids" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="rcpts" type="tns:recipient" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="recipientCollection">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:arrayList">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ForwardMessagesByUIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:sendMessageResponseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendMessageResponseType">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:apiResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="smtpId" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="MarkMessagesAsReadByUID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="uids" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MarkMessagesAsReadByUIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:apiResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchMessagesMetadataByReceivedDateUTC">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" name="beginTime" type="xs:string" />
+          <xs:element minOccurs="0" name="endTime" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchMessagesMetadataByReceivedDateUTCResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getMessageResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MoveMessagesByUID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="uids" type="xs:long" />
+          <xs:element minOccurs="0" name="destFolderName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MoveMessagesByUIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:apiResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PatientFHIRQuery">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="query" type="tns:fhirQueryType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fhirQueryType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="identifier" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="recipients" nillable="true" type="tns:recipient" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="resources" nillable="true" type="tns:fhirResourceType" />
+          <xs:element minOccurs="0" name="subject" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fhirResourceType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="queryParameters" nillable="true" type="tns:fhirQueryParameterType" />
+          <xs:element minOccurs="0" name="resourceType" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fhirQueryParameterType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fhirResourceCollection">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:arrayList">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="PatientFHIRQueryResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:sendMessageResponseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesByReceivedDateUTC">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" name="beginTime" type="xs:string" />
+          <xs:element minOccurs="0" name="endTime" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesByReceivedDateUTCResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getMessageResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUIDs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUIDsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getUIDResponseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getUIDResponseType">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:apiResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="uids" nillable="true" type="xs:long" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="uidCollection">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:arrayList">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesByUID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="uids" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesByUIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getMessageResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Send">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sendRequest" type="tns:sendRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="authentication" type="tns:authentication" />
+          <xs:element minOccurs="0" name="message" type="tns:message" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="attachmentCollection">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:arrayList">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="SendResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:sendMessageResponseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessageCount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessageCountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getCountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCountResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:apiResponse">
+            <xs:sequence>
+              <xs:element name="count" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="GetMessageStatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="smtpId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessageStatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:directMessageStatusReportResponseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="directMessageStatusReportResponseType">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:apiResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="csvData" type="xs:base64Binary" />
+              <xs:element name="hasCvData" type="xs:boolean" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="messageLogs" nillable="true" type="tns:directMessageLog" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="directMessageLog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="from" type="xs:string" />
+          <xs:element minOccurs="0" name="messageId" type="xs:string" />
+          <xs:element name="messageSize" type="xs:long" />
+          <xs:element minOccurs="0" name="patientId" type="xs:string" />
+          <xs:element minOccurs="0" name="sourceId" type="xs:string" />
+          <xs:element minOccurs="0" name="status" type="xs:string" />
+          <xs:element minOccurs="0" name="statusDetails" type="xs:string" />
+          <xs:element minOccurs="0" name="to" type="xs:string" />
+          <xs:element minOccurs="0" name="ts" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="uniqueId" type="xs:string" />
+          <xs:element minOccurs="0" name="xdrId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="directMessageLogCollection">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:arrayList">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="GetMessageByIndex">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element name="index" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessageByIndexResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getMessageResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendWithHeader">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sendRequest" type="tns:sendRequestWithHeader" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendRequestWithHeader">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="authentication" type="tns:authentication" />
+          <xs:element minOccurs="0" name="message" type="tns:messageWithHeader" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="messageWithHeader">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:message">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="headers" nillable="true" type="tns:messageHeader" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="headerCollection">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:arrayList">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="SendWithHeaderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:sendMessageResponseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CopyMessagesByUID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="uids" type="xs:long" />
+          <xs:element minOccurs="0" name="destFolderName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CopyMessagesByUIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:apiResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUnreadMessages">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUnreadMessagesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getMessageResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetFolders">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="rootFolderName" type="xs:string" />
+          <xs:element name="subscribedFolderOnly" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetFoldersResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getFoldersResponseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getFoldersResponseType">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:apiResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="folders" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="folderCollection">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:arrayList">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesBySubject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" name="subject" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesBySubjectResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getMessageResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesByReceivedDate">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element name="beginTime" type="xs:long" />
+          <xs:element name="endTime" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesByReceivedDateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getMessageResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetDeletedMessageCount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetDeletedMessageCountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getCountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUnreadMessageCount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetUnreadMessageCountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getCountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesStatusBySmtpIds">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="smtpIds" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="stringCollection">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:arrayList">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesStatusBySmtpIdsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:directMessageStatusReportResponseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SetFolderSubscribed">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="folders" type="xs:string" />
+          <xs:element name="subscribed" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SetFolderSubscribedResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:apiResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteFolder">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteFolderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:apiResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessages">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetMessagesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getMessageResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MoveFolder">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auth" type="tns:authentication" />
+          <xs:element minOccurs="0" name="folderName" type="xs:string" />
+          <xs:element minOccurs="0" name="newFolderName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MoveFolderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:apiResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="recipientType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="TO" />
+          <xs:enumeration value="CC" />
+          <xs:enumeration value="BCC" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SearchMessagesMetadataByReceivedDate">
+    <wsdl:part name="parameters" element="tns:SearchMessagesMetadataByReceivedDate" />
+  </wsdl:message>
+  <wsdl:message name="Echo">
+    <wsdl:part name="parameters" element="tns:Echo" />
+  </wsdl:message>
+  <wsdl:message name="GetUIDsResponse">
+    <wsdl:part name="parameters" element="tns:GetUIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PatientFHIRQueryResponse">
+    <wsdl:part name="parameters" element="tns:PatientFHIRQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="MarkMessagesAsUnReadByUIDResponse">
+    <wsdl:part name="parameters" element="tns:MarkMessagesAsUnReadByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRawMessagesByUIDResponse">
+    <wsdl:part name="parameters" element="tns:GetRawMessagesByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMessagesByUIDResponse">
+    <wsdl:part name="parameters" element="tns:DeleteMessagesByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageMetadataResponse">
+    <wsdl:part name="parameters" element="tns:GetMessageMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveRawMessagesResponse">
+    <wsdl:part name="parameters" element="tns:SaveRawMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveRawMessages">
+    <wsdl:part name="parameters" element="tns:SaveRawMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageCountResponse">
+    <wsdl:part name="parameters" element="tns:GetMessageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageByIndexResponse">
+    <wsdl:part name="parameters" element="tns:GetMessageByIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedMessageCountResponse">
+    <wsdl:part name="parameters" element="tns:GetDeletedMessageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateFolder">
+    <wsdl:part name="parameters" element="tns:CreateFolder" />
+  </wsdl:message>
+  <wsdl:message name="SearchMessagesMetadataByReceivedDateUTCResponse">
+    <wsdl:part name="parameters" element="tns:SearchMessagesMetadataByReceivedDateUTCResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnreadMessageCountResponse">
+    <wsdl:part name="parameters" element="tns:GetUnreadMessageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetFolderSubscribedResponse">
+    <wsdl:part name="parameters" element="tns:SetFolderSubscribedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRawMessagesByUID">
+    <wsdl:part name="parameters" element="tns:GetRawMessagesByUID" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByUIDResponse">
+    <wsdl:part name="parameters" element="tns:GetMessagesByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchMessagesMetadataByReceivedDateResponse">
+    <wsdl:part name="parameters" element="tns:SearchMessagesMetadataByReceivedDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByReceivedDateUTC">
+    <wsdl:part name="parameters" element="tns:GetMessagesByReceivedDateUTC" />
+  </wsdl:message>
+  <wsdl:message name="GetUIDs">
+    <wsdl:part name="parameters" element="tns:GetUIDs" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByUID">
+    <wsdl:part name="parameters" element="tns:GetMessagesByUID" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByReceivedDateUTCResponse">
+    <wsdl:part name="parameters" element="tns:GetMessagesByReceivedDateUTCResponse" />
+  </wsdl:message>
+  <wsdl:message name="EchoResponse">
+    <wsdl:part name="parameters" element="tns:EchoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnreadMessagesResponse">
+    <wsdl:part name="parameters" element="tns:GetUnreadMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageCount">
+    <wsdl:part name="parameters" element="tns:GetMessageCount" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageByIndex">
+    <wsdl:part name="parameters" element="tns:GetMessageByIndex" />
+  </wsdl:message>
+  <wsdl:message name="SendWithHeader">
+    <wsdl:part name="parameters" element="tns:SendWithHeader" />
+  </wsdl:message>
+  <wsdl:message name="CopyMessagesByUID">
+    <wsdl:part name="parameters" element="tns:CopyMessagesByUID" />
+  </wsdl:message>
+  <wsdl:message name="GetUnreadMessages">
+    <wsdl:part name="parameters" element="tns:GetUnreadMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesBySenderResponse">
+    <wsdl:part name="parameters" element="tns:GetMessagesBySenderResponse" />
+  </wsdl:message>
+  <wsdl:message name="MarkMessagesAsReadByUIDResponse">
+    <wsdl:part name="parameters" element="tns:MarkMessagesAsReadByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFolders">
+    <wsdl:part name="parameters" element="tns:GetFolders" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFolderResponse">
+    <wsdl:part name="parameters" element="tns:DeleteFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByReceivedDate">
+    <wsdl:part name="parameters" element="tns:GetMessagesByReceivedDate" />
+  </wsdl:message>
+  <wsdl:message name="GetUnreadMessageCount">
+    <wsdl:part name="parameters" element="tns:GetUnreadMessageCount" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesStatusBySmtpIds">
+    <wsdl:part name="parameters" element="tns:GetMessagesStatusBySmtpIds" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesResponse">
+    <wsdl:part name="parameters" element="tns:GetMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetFolderSubscribed">
+    <wsdl:part name="parameters" element="tns:SetFolderSubscribed" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesBySubjectResponse">
+    <wsdl:part name="parameters" element="tns:GetMessagesBySubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendResponse">
+    <wsdl:part name="parameters" element="tns:SendResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByIndexes">
+    <wsdl:part name="parameters" element="tns:GetMessagesByIndexes" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesStatusBySmtpIdsResponse">
+    <wsdl:part name="parameters" element="tns:GetMessagesStatusBySmtpIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMessagesByUID">
+    <wsdl:part name="parameters" element="tns:DeleteMessagesByUID" />
+  </wsdl:message>
+  <wsdl:message name="MoveMessagesByUIDResponse">
+    <wsdl:part name="parameters" element="tns:MoveMessagesByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByReceivedDateResponse">
+    <wsdl:part name="parameters" element="tns:GetMessagesByReceivedDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesBySender">
+    <wsdl:part name="parameters" element="tns:GetMessagesBySender" />
+  </wsdl:message>
+  <wsdl:message name="MarkMessagesAsUnReadByUID">
+    <wsdl:part name="parameters" element="tns:MarkMessagesAsUnReadByUID" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageMetadata">
+    <wsdl:part name="parameters" element="tns:GetMessageMetadata" />
+  </wsdl:message>
+  <wsdl:message name="ForwardMessagesByUIDResponse">
+    <wsdl:part name="parameters" element="tns:ForwardMessagesByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoveFolderResponse">
+    <wsdl:part name="parameters" element="tns:MoveFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFoldersResponse">
+    <wsdl:part name="parameters" element="tns:GetFoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForwardMessagesByUID">
+    <wsdl:part name="parameters" element="tns:ForwardMessagesByUID" />
+  </wsdl:message>
+  <wsdl:message name="MarkMessagesAsReadByUID">
+    <wsdl:part name="parameters" element="tns:MarkMessagesAsReadByUID" />
+  </wsdl:message>
+  <wsdl:message name="SearchMessagesMetadataByReceivedDateUTC">
+    <wsdl:part name="parameters" element="tns:SearchMessagesMetadataByReceivedDateUTC" />
+  </wsdl:message>
+  <wsdl:message name="MoveMessagesByUID">
+    <wsdl:part name="parameters" element="tns:MoveMessagesByUID" />
+  </wsdl:message>
+  <wsdl:message name="PatientFHIRQuery">
+    <wsdl:part name="parameters" element="tns:PatientFHIRQuery" />
+  </wsdl:message>
+  <wsdl:message name="Send">
+    <wsdl:part name="parameters" element="tns:Send" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatus">
+    <wsdl:part name="parameters" element="tns:GetMessageStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesBySubject">
+    <wsdl:part name="parameters" element="tns:GetMessagesBySubject" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedMessageCount">
+    <wsdl:part name="parameters" element="tns:GetDeletedMessageCount" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByIndexesResponse">
+    <wsdl:part name="parameters" element="tns:GetMessagesByIndexesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CopyMessagesByUIDResponse">
+    <wsdl:part name="parameters" element="tns:CopyMessagesByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFolder">
+    <wsdl:part name="parameters" element="tns:DeleteFolder" />
+  </wsdl:message>
+  <wsdl:message name="CreateFolderResponse">
+    <wsdl:part name="parameters" element="tns:CreateFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessages">
+    <wsdl:part name="parameters" element="tns:GetMessages" />
+  </wsdl:message>
+  <wsdl:message name="MoveFolder">
+    <wsdl:part name="parameters" element="tns:MoveFolder" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatusResponse">
+    <wsdl:part name="parameters" element="tns:GetMessageStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendWithHeaderResponse">
+    <wsdl:part name="parameters" element="tns:SendWithHeaderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DirectMessageService">
+    <wsdl:operation name="SearchMessagesMetadataByReceivedDate">
+      <wsdl:input name="SearchMessagesMetadataByReceivedDate" message="tns:SearchMessagesMetadataByReceivedDate" />
+      <wsdl:output name="SearchMessagesMetadataByReceivedDateResponse" message="tns:SearchMessagesMetadataByReceivedDateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Echo">
+      <wsdl:input name="Echo" message="tns:Echo" />
+      <wsdl:output name="EchoResponse" message="tns:EchoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByIndexes">
+      <wsdl:input name="GetMessagesByIndexes" message="tns:GetMessagesByIndexes" />
+      <wsdl:output name="GetMessagesByIndexesResponse" message="tns:GetMessagesByIndexesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessagesByUID">
+      <wsdl:input name="DeleteMessagesByUID" message="tns:DeleteMessagesByUID" />
+      <wsdl:output name="DeleteMessagesByUIDResponse" message="tns:DeleteMessagesByUIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesBySender">
+      <wsdl:input name="GetMessagesBySender" message="tns:GetMessagesBySender" />
+      <wsdl:output name="GetMessagesBySenderResponse" message="tns:GetMessagesBySenderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessagesAsUnReadByUID">
+      <wsdl:input name="MarkMessagesAsUnReadByUID" message="tns:MarkMessagesAsUnReadByUID" />
+      <wsdl:output name="MarkMessagesAsUnReadByUIDResponse" message="tns:MarkMessagesAsUnReadByUIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRawMessages">
+      <wsdl:input name="SaveRawMessages" message="tns:SaveRawMessages" />
+      <wsdl:output name="SaveRawMessagesResponse" message="tns:SaveRawMessagesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFolder">
+      <wsdl:input name="CreateFolder" message="tns:CreateFolder" />
+      <wsdl:output name="CreateFolderResponse" message="tns:CreateFolderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageMetadata">
+      <wsdl:input name="GetMessageMetadata" message="tns:GetMessageMetadata" />
+      <wsdl:output name="GetMessageMetadataResponse" message="tns:GetMessageMetadataResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRawMessagesByUID">
+      <wsdl:input name="GetRawMessagesByUID" message="tns:GetRawMessagesByUID" />
+      <wsdl:output name="GetRawMessagesByUIDResponse" message="tns:GetRawMessagesByUIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ForwardMessagesByUID">
+      <wsdl:input name="ForwardMessagesByUID" message="tns:ForwardMessagesByUID" />
+      <wsdl:output name="ForwardMessagesByUIDResponse" message="tns:ForwardMessagesByUIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessagesAsReadByUID">
+      <wsdl:input name="MarkMessagesAsReadByUID" message="tns:MarkMessagesAsReadByUID" />
+      <wsdl:output name="MarkMessagesAsReadByUIDResponse" message="tns:MarkMessagesAsReadByUIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMessagesMetadataByReceivedDateUTC">
+      <wsdl:input name="SearchMessagesMetadataByReceivedDateUTC" message="tns:SearchMessagesMetadataByReceivedDateUTC" />
+      <wsdl:output name="SearchMessagesMetadataByReceivedDateUTCResponse" message="tns:SearchMessagesMetadataByReceivedDateUTCResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveMessagesByUID">
+      <wsdl:input name="MoveMessagesByUID" message="tns:MoveMessagesByUID" />
+      <wsdl:output name="MoveMessagesByUIDResponse" message="tns:MoveMessagesByUIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="PatientFHIRQuery">
+      <wsdl:input name="PatientFHIRQuery" message="tns:PatientFHIRQuery" />
+      <wsdl:output name="PatientFHIRQueryResponse" message="tns:PatientFHIRQueryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByReceivedDateUTC">
+      <wsdl:input name="GetMessagesByReceivedDateUTC" message="tns:GetMessagesByReceivedDateUTC" />
+      <wsdl:output name="GetMessagesByReceivedDateUTCResponse" message="tns:GetMessagesByReceivedDateUTCResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUIDs">
+      <wsdl:input name="GetUIDs" message="tns:GetUIDs" />
+      <wsdl:output name="GetUIDsResponse" message="tns:GetUIDsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByUID">
+      <wsdl:input name="GetMessagesByUID" message="tns:GetMessagesByUID" />
+      <wsdl:output name="GetMessagesByUIDResponse" message="tns:GetMessagesByUIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Send">
+      <wsdl:input name="Send" message="tns:Send" />
+      <wsdl:output name="SendResponse" message="tns:SendResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageCount">
+      <wsdl:input name="GetMessageCount" message="tns:GetMessageCount" />
+      <wsdl:output name="GetMessageCountResponse" message="tns:GetMessageCountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatus">
+      <wsdl:input name="GetMessageStatus" message="tns:GetMessageStatus" />
+      <wsdl:output name="GetMessageStatusResponse" message="tns:GetMessageStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageByIndex">
+      <wsdl:input name="GetMessageByIndex" message="tns:GetMessageByIndex" />
+      <wsdl:output name="GetMessageByIndexResponse" message="tns:GetMessageByIndexResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SendWithHeader">
+      <wsdl:input name="SendWithHeader" message="tns:SendWithHeader" />
+      <wsdl:output name="SendWithHeaderResponse" message="tns:SendWithHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyMessagesByUID">
+      <wsdl:input name="CopyMessagesByUID" message="tns:CopyMessagesByUID" />
+      <wsdl:output name="CopyMessagesByUIDResponse" message="tns:CopyMessagesByUIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnreadMessages">
+      <wsdl:input name="GetUnreadMessages" message="tns:GetUnreadMessages" />
+      <wsdl:output name="GetUnreadMessagesResponse" message="tns:GetUnreadMessagesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolders">
+      <wsdl:input name="GetFolders" message="tns:GetFolders" />
+      <wsdl:output name="GetFoldersResponse" message="tns:GetFoldersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesBySubject">
+      <wsdl:input name="GetMessagesBySubject" message="tns:GetMessagesBySubject" />
+      <wsdl:output name="GetMessagesBySubjectResponse" message="tns:GetMessagesBySubjectResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByReceivedDate">
+      <wsdl:input name="GetMessagesByReceivedDate" message="tns:GetMessagesByReceivedDate" />
+      <wsdl:output name="GetMessagesByReceivedDateResponse" message="tns:GetMessagesByReceivedDateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedMessageCount">
+      <wsdl:input name="GetDeletedMessageCount" message="tns:GetDeletedMessageCount" />
+      <wsdl:output name="GetDeletedMessageCountResponse" message="tns:GetDeletedMessageCountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnreadMessageCount">
+      <wsdl:input name="GetUnreadMessageCount" message="tns:GetUnreadMessageCount" />
+      <wsdl:output name="GetUnreadMessageCountResponse" message="tns:GetUnreadMessageCountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesStatusBySmtpIds">
+      <wsdl:input name="GetMessagesStatusBySmtpIds" message="tns:GetMessagesStatusBySmtpIds" />
+      <wsdl:output name="GetMessagesStatusBySmtpIdsResponse" message="tns:GetMessagesStatusBySmtpIdsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFolderSubscribed">
+      <wsdl:input name="SetFolderSubscribed" message="tns:SetFolderSubscribed" />
+      <wsdl:output name="SetFolderSubscribedResponse" message="tns:SetFolderSubscribedResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFolder">
+      <wsdl:input name="DeleteFolder" message="tns:DeleteFolder" />
+      <wsdl:output name="DeleteFolderResponse" message="tns:DeleteFolderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:input name="GetMessages" message="tns:GetMessages" />
+      <wsdl:output name="GetMessagesResponse" message="tns:GetMessagesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveFolder">
+      <wsdl:input name="MoveFolder" message="tns:MoveFolder" />
+      <wsdl:output name="MoveFolderResponse" message="tns:MoveFolderResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DirectMessageServiceSoapBinding" type="tns:DirectMessageService">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchMessagesMetadataByReceivedDate">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="SearchMessagesMetadataByReceivedDate">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SearchMessagesMetadataByReceivedDateResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Echo">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="Echo">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EchoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByIndexes">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetMessagesByIndexes">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMessagesByIndexesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessagesByUID">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="DeleteMessagesByUID">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteMessagesByUIDResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesBySender">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetMessagesBySender">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMessagesBySenderResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessagesAsUnReadByUID">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="MarkMessagesAsUnReadByUID">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MarkMessagesAsUnReadByUIDResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRawMessages">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="SaveRawMessages">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveRawMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFolder">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="CreateFolder">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateFolderResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageMetadata">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetMessageMetadata">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMessageMetadataResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRawMessagesByUID">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetRawMessagesByUID">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRawMessagesByUIDResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForwardMessagesByUID">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="ForwardMessagesByUID">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForwardMessagesByUIDResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessagesAsReadByUID">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="MarkMessagesAsReadByUID">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MarkMessagesAsReadByUIDResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMessagesMetadataByReceivedDateUTC">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="SearchMessagesMetadataByReceivedDateUTC">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SearchMessagesMetadataByReceivedDateUTCResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveMessagesByUID">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="MoveMessagesByUID">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MoveMessagesByUIDResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PatientFHIRQuery">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="PatientFHIRQuery">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PatientFHIRQueryResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByReceivedDateUTC">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetMessagesByReceivedDateUTC">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMessagesByReceivedDateUTCResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUIDs">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetUIDs">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUIDsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByUID">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetMessagesByUID">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMessagesByUIDResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Send">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="Send">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageCount">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetMessageCount">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMessageCountResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatus">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetMessageStatus">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMessageStatusResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageByIndex">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetMessageByIndex">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMessageByIndexResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWithHeader">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="SendWithHeader">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendWithHeaderResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyMessagesByUID">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="CopyMessagesByUID">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CopyMessagesByUIDResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnreadMessages">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetUnreadMessages">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUnreadMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolders">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetFolders">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetFoldersResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesBySubject">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetMessagesBySubject">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMessagesBySubjectResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByReceivedDate">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetMessagesByReceivedDate">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMessagesByReceivedDateResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedMessageCount">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetDeletedMessageCount">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDeletedMessageCountResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnreadMessageCount">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetUnreadMessageCount">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUnreadMessageCountResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesStatusBySmtpIds">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetMessagesStatusBySmtpIds">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMessagesStatusBySmtpIdsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFolderSubscribed">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="SetFolderSubscribed">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetFolderSubscribedResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFolder">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="DeleteFolder">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteFolderResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="GetMessages">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveFolder">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="MoveFolder">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MoveFolderResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DirectMessageService">
+    <wsdl:port name="DirectMessageService_Port_Soap12" binding="tns:DirectMessageServiceSoapBinding">
+      <soap12:address location="https://api.directmdemail.com/message/services/DirectMessageService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
